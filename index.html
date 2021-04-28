@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="Firefox">
+        <link rel="stylesheet" href="style.css">
+        <title>Testing Page</title>
+    </head>
+    <body>
+        <form class="userForm" action="http://localhost:5000/api/accounts" method="POST">
+            <label for="user">User</label>
+            <input type="text" id="user" name="user">
+            <label for="currency">Currency</label>
+            <input type="text" id="currency" name="currency">
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description">
+            <label for="balance">Initial Balance</label>
+            <input type="text" id="balance" name="balance">
+            <button>Create User</button>
+        </form>
+        <form class="transactionForm" action="http://localhost:5000/api/accounts/Tom/transactions" method="POST">
+            <label for="date">Date</label>
+            <input type="text" id="date" name="date">
+            <label for="object">Object</label>
+            <input type="text" id="object" name="object">
+            <label for="amount">Amount</label>
+            <input type="text" id="amount" name="amount">
+            <button>Make Transaction</button>
+        </form>
+        <input type="button" value="User Form" id="userFormButton"/>
+        <input type="button" value="Log Transaction" id="transactionFormButton"/>
+        <script type="module" src="./main.js"></script> 
+    </body>
+</html>
