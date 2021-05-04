@@ -13,7 +13,8 @@ $ asserts position at the end of the string, or before the line terminator right
 tl;dr - each character in a string has an index value, this regex checks if the index of the character is between 48-57, 65-90, or 97-122. (or a space)
 when used with the .test() method, the expression will return a truthy value if the index of all characters of the tested string lie within the range of the regex
 
-Usage: Lines 76-78 of /formScreens/userForm.js
+Usage: Lines 77-79 of /formScreens/userForm.js
+Usage: Lines 105-107 of /formScreens/transactionForm.js, with an additional \: and \-, no \s
 
 
 /
@@ -29,4 +30,5 @@ $ asserts position at the end of the string, or before the line terminator right
 tl;dr - each character in a string has an index value, this regex checks if the index of the character is between 48-57, or is a literal ".".
 when used with the .test() method, the expression will return a truthy value if the index of all characters of the tested string lie within the range of the regex
 
-Usage: Lines 132-134 of /formScreens/userForm.js
+Usage: Lines 133-135 of /formScreens/userForm.js
+Usage: Lines 90-92 of /formScreens/userForm.js, with an additional \-
