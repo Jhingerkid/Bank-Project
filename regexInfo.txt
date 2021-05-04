@@ -1,0 +1,32 @@
+/
+^[A-Za-z0-9\s]+$
+/
+^ asserts position at start of the string
+Match a single character present in the list below [A-Za-z0-9\s]
++ matches the previous token between one and unlimited times, as many times as possible, giving back as needed (greedy)
+A-Z matches a single character in the range between A (index 65) and Z (index 90) (case sensitive)
+a-z matches a single character in the range between a (index 97) and z (index 122) (case sensitive)
+0-9 matches a single character in the range between 0 (index 48) and 9 (index 57) (case sensitive)
+\s matches any whitespace character (equivalent to [\r\n\t\f\v ])
+$ asserts position at the end of the string, or before the line terminator right at the end of the string (if any)
+
+tl;dr - each character in a string has an index value, this regex checks if the index of the character is between 48-57, 65-90, or 97-122. (or a space)
+when used with the .test() method, the expression will return a truthy value if the index of all characters of the tested string lie within the range of the regex
+
+Usage: Lines 76-78 of /formScreens/userForm.js
+
+
+/
+^[0-9\.]$
+/
+^ asserts position at start of the string
+Match a single character present in the list below [0-9\.]
++ matches the previous token between one and unlimited times, as many times as possible, giving back as needed (greedy)
+0-9 matches a single character in the range between 0 (index 48) and 9 (index 57) (case sensitive)
+\. matches the character . literally (case sensitive)
+$ asserts position at the end of the string, or before the line terminator right at the end of the string (if any)
+
+tl;dr - each character in a string has an index value, this regex checks if the index of the character is between 48-57, or is a literal ".".
+when used with the .test() method, the expression will return a truthy value if the index of all characters of the tested string lie within the range of the regex
+
+Usage: Lines 132-134 of /formScreens/userForm.js

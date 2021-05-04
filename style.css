@@ -1,4 +1,6 @@
 body {
+    background-image: url("https://wallpaperaccess.com/full/1393728.jpg");
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,20 +10,107 @@ body {
     margin: 0;
 }
 
-#userFormButton, #transactionFormButton{
-    color: black;
-    width: 300px;
-    height: 100px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.back {
+    font-size: 20px;
+    cursor: pointer;
+    height: 40px;
+    width: 80px;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+.inputcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputcontainer label {
+    margin-bottom: 10px;
+    font-size: 26px;
 }
 
 .userForm {
     display: none;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url("https://image.freepik.com/free-vector/glowing-digital-particle-sphere-technology-background_1017-23553.jpg");
+    background-size: cover;
+    color: white;
+    height: 70%;
+    width: 20%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.userForm input, .userForm select, .userForm textarea {
+    border: 2px solid rgb(19, 19, 19);
+}
+
+.userForm h1 {
+    font-size: 22px;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+.transactionForm h1 {
+    font-size: 22px;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+.text {
+    color: rgb(216, 1, 1);
+    text-shadow: -1px -1px 0 rgb(0, 1, 54), 1px -1px 0 rgb(0, 1, 54), -1px 1px 0 rgb(0, 1, 54), 1px 1px 0 rgb(0, 1, 54);
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 22px;
+    margin-top: 5px;
 }
 
 .transactionForm {
-    display:none;
+    display: none;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url("https://image.freepik.com/free-vector/glowing-digital-particle-sphere-technology-background_1017-23553.jpg");
+    background-size: cover;
+    color: white;
+    height: 70%;
+    width: 15%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.createUser, .createTransaction {
+    cursor: pointer;
+    height: 40px;
+    font-size: 20px;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+#userFormButton, #transactionFormButton{
+    border: 2px solid rgb(47, 38, 177);
+    background-image: linear-gradient(to bottom right, rgb(32, 32, 156), rgb(77, 8, 77));
+    border-radius: 15px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    width: 300px;
+    height: 100px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 26px;
+    font-family: Verdana, Tahoma, sans-serif;
+    background-color: rgb(149, 149, 149);
+}
+
+#userFormButton:hover, #transactionFormButton:hover{
+    background-image: linear-gradient(to bottom right, rgb(42, 42, 204), rgb(129, 14, 129));
+    background-color: rgb(216, 216, 216);
+}
+
+#description{
+    width: 150%;
+    height: 100px;
+}
+
+#currency {
+    width: 70%;
 }

@@ -8,25 +8,53 @@
         <title>Testing Page</title>
     </head>
     <body>
-        <form class="userForm" action="http://localhost:5000/api/accounts" method="POST">
-            <label for="user">User</label>
-            <input type="text" id="user" name="user">
-            <label for="currency">Currency</label>
-            <input type="text" id="currency" name="currency">
-            <label for="description">Description</label>
-            <input type="text" id="description" name="description">
-            <label for="balance">Initial Balance</label>
-            <input type="text" id="balance" name="balance">
-            <button>Create User</button>
+        <script type="text/javascript" src="./htmlFunctions.js"></script>
+        <iframe name="dump" id="dump" style="display: none;"></iframe> 
+        <form class="userForm" action="http://localhost:5000/api/accounts" method="POST" target="dump">
+            <h1>Create a new user</h1>
+            <div class="inputcontainer">
+                <label for="user">User:</label>
+                <input type="text" id="user" name="user">
+            </div>
+            <div class="inputcontainer">
+                <label for="currency">Currency:</label>
+                <select name= "currency" id="currency">
+                    <option value="$">$</option>
+                    <option value="€">€</option>
+                </select>
+            </div>
+            <div class="inputcontainer">
+                <label for="description">Description:</label>
+                <textarea type="text" id="description" name="description"></textarea>
+            </div>
+            <div class="inputcontainer">
+                <label for="balance">Initial Balance:</label>
+                <input type="number" id="balance" name="balance" step=".01" onblur="fixBal(this.value)">
+            </div>
+            <button class="createUser">Create User</button>
         </form>
-        <form class="transactionForm" action="http://localhost:5000/api/accounts/Tom/transactions" method="POST">
-            <label for="date">Date</label>
-            <input type="text" id="date" name="date">
-            <label for="object">Object</label>
-            <input type="text" id="object" name="object">
-            <label for="amount">Amount</label>
-            <input type="text" id="amount" name="amount">
-            <button>Make Transaction</button>
+        <form class="transactionForm" action="" method="POST" target="dump">
+            <h1>Log a transaction</h1>
+            <div class="inputcontainer">
+                <label for="username">Username</label>
+                <input type="text" id="username" list="userlist">
+                <datalist id="userlist">
+                    <option>ThomasBarr</option>
+                </datalist>
+            </div>
+            <div class="inputcontainer">
+                <label for="date">Date</label>
+                <input type="datetime-local" id="date" name="date">
+            </div>
+            <div class="inputcontainer">
+                <label for="object">Object</label>
+                <input type="text" id="object" name="object">
+            </div>
+            <div class="inputcontainer">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" step=".01" onblur="fixAmount(this.value)">
+            </div>
+            <button class="createTransaction">Make Transaction</button>
         </form>
         <input type="button" value="User Form" id="userFormButton"/>
         <input type="button" value="Log Transaction" id="transactionFormButton"/>
