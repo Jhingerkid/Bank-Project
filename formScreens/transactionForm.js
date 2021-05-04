@@ -36,6 +36,7 @@ document.querySelector(".createTransaction").addEventListener("click", function 
   let object = document.querySelector("#object").value;
   let amount = document.querySelector("#amount").value;
   let date = document.querySelector("#date").value;
+  let username = document.querySelector("#username").value;
   // for each form input, check it against a set of conditions
   // prevent the POST if any of them fail their respective checks
   if (checkObject(object)){
@@ -45,6 +46,9 @@ document.querySelector(".createTransaction").addEventListener("click", function 
     event.preventDefault();
   }
   if (checkDate(date)){
+    event.preventDefault();
+  }
+  if (checkUsername(username)){
     event.preventDefault();
   }
   // if the form is successful, go back to the main menu
@@ -108,6 +112,18 @@ function checkDate(date){
     document.querySelector("#date").style.color = "red";
     text.innerHTML = "Date format is invalid";
     document.querySelector("#date").after(text);
+    window.check=true;
+    return true;
+  }
+}
+
+function checkUsername(username){
+  let text = document.createElement("span")
+  text.classList.add("text");
+  // check for empty input
+  if (!username.trim().length) {
+    text.innerHTML = "Please select a user";
+    document.querySelector("#username").after(text);
     window.check=true;
     return true;
   }
